@@ -20,10 +20,16 @@ export default function App() {
     <div>
       <div>{advice}</div>
       <h1>Click to get A Advice!</h1>
-      <p>
-        You have read <em>{count}</em> advices
-      </p>
+      <Message count={count} />
       <button onClick={getAdvice}> Get Advice</button>
     </div>
+  );
+}
+
+function Message(props) {
+  return (
+    <p>
+      You have read <em>{props.count}</em> advices
+    </p>
   );
 }
