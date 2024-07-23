@@ -1,6 +1,7 @@
 import React from 'react';
 import './style.css';
 import { useState, useEffect } from 'react';
+import { Messages } from './async-request/Messages';
 
 export default function App() {
   const [advice, setAdvice] = useState('');
@@ -16,20 +17,13 @@ export default function App() {
   useEffect(function () {
     getAdvice();
   }, []);
+
   return (
     <div>
       <div>{advice}</div>
       <h1>Click to get A Advice!</h1>
-      <Message count={count} />
+      <Messages count={count} />
       <button onClick={getAdvice}> Get Advice</button>
     </div>
-  );
-}
-
-function Message(props) {
-  return (
-    <p>
-      You have read <em>{props.count}</em> advices
-    </p>
   );
 }
